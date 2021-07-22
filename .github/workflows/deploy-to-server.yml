@@ -1,0 +1,23 @@
+name: Transfer Via SSH
+on:
+  push:
+    branches:
+      - main
+jobs:
+  sendFiles:
+    name: Transfer Files
+    runs-on: ubuntu-latest
+    env:
+      LOCAL_DIRECTORY: ./
+      REMOTE_DIRECTORY: ~/
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Send Files
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ${{ env.LOCAL_DIRECTORY }}
+          remote: ${{ env.REMOTE_DIRECTORY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASS }}
