@@ -9,8 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LOCAL_DIRECTORY: ./
-      REMOTE_DIRECTORY: /var/www/html/appA
+      # The full name of the remote directory will be parsed in the first step
+      REMOTE_DIRECTORY: ""
     steps:
+      - name: Parse Remote Directory Name
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: echo "REMOTE_DIRECTORY=/var/www/html/$(echo $GITHUB_REPOSITORY | cut -d "/" -f 2)" >> $GITHUB_ENV
       - name: Checkout Project
         uses: actions/checkout@v2
       - name: Send Files
