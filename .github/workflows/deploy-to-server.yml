@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LOCAL_DIRECTORY: ./
-      REMOTE_DIRECTORY: /var/www/html/
+      REMOTE_DIRECTORY: /var/www/html/appA
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
