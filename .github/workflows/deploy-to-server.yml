@@ -8,8 +8,8 @@ jobs:
     name: Transfer Files
     runs-on: ubuntu-latest
     env:
-      LOCAL_DIRECTORY: index.html
-      REMOTE_DIRECTORY: /var/www/html/index.html
+      LOCAL_DIRECTORY: ./
+      REMOTE_DIRECTORY: /var/www/html/
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
