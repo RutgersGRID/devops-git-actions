@@ -1,6 +1,6 @@
 name: Deploy to GitHub Pages
 on: 
-  push
+  push:
     branches:
       - demo 
 
@@ -13,4 +13,3 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
-        
