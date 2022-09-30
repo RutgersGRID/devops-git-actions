@@ -2,4 +2,4 @@
 FROM nginx
 
 # Copy index file to nginx web root directory.
-COPY ./index.html /usr/share/nginx/html/index.html
+COPY . /usr/share/nginx/html/.
