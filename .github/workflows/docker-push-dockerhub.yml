@@ -24,4 +24,5 @@ jobs:
     - name: Docker Push
       run: 
         echo "MY VAR $DOCKER_USER"
+      run: 
         docker push $DOCKER_USER/devops-git-actions
