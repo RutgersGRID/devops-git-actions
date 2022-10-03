@@ -22,6 +22,5 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag yuria/devops-git-actions:$(date +%s)
     - name: Docker Push
-      run: |
-        # echo "MY VAR $DOCKER_USER"
+      run:
         docker push yuria/devops-git-actions
